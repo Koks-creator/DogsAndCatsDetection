@@ -6,13 +6,13 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 
 classes = ["cat", "dog"]
-model = keras.models.load_model('CatsDogsModel.h5')
+model = keras.models.load_model('CatsDogsModel.h5') 
 
 images = []
 for image_name in os.listdir("images"):
     # print(image_name)
     img = cv2.imread(r"images/" + image_name)
-    img = cv2.resize(img, (224, 224))
+    img = cv2.resize(img, (224, 224)) #CatsDogsModel5 uses 200x200
 
     data = np.array([img])
     pred = model.predict(data)
